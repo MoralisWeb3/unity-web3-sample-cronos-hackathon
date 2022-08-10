@@ -6,7 +6,6 @@ namespace Cronos_Hackathon_Starter_Sample
 {
     [RequireComponent(typeof(Animator))]
     [RequireComponent(typeof(CharacterController))]
-    [RequireComponent(typeof(PlayerInput))]
     public class PlayerMovement : MonoBehaviour
     {
         public Action onMaxFallingTimeReached;
@@ -107,7 +106,6 @@ namespace Cronos_Hackathon_Starter_Sample
         private int _animIDDance;
 
         // Components
-        private PlayerInput _playerInput;
         private Animator _animator;
         private CharacterController _characterController;
         private PlayerInputController _inputController;
@@ -115,7 +113,7 @@ namespace Cronos_Hackathon_Starter_Sample
 
         // Other control vars
         private const float LookInputThreshold = 0.01f;
-        private bool IsCurrentDeviceMouse => _playerInput.currentControlScheme == "KeyboardMouse";
+        private bool IsCurrentDeviceMouse => _inputController.playerInput.currentControlScheme == "KeyboardMouse";
 
 
         #region UNITY_LIFECYCLE
@@ -136,7 +134,6 @@ namespace Cronos_Hackathon_Starter_Sample
             _animator = GetComponent<Animator>();
             _characterController = GetComponent<CharacterController>();
             _inputController = GetComponent<PlayerInputController>();
-            _playerInput = GetComponent<PlayerInput>();
 
             AssignAnimationIDs();
 

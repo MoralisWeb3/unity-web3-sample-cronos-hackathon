@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace NFT_PowerUp
+namespace Cronos_Hackathon_Starter_Sample
 {
     [RequireComponent(typeof(Animator))]
     [RequireComponent(typeof(CharacterController))]

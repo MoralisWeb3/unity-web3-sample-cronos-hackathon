@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace NFT_PowerUp
+namespace Cronos_Hackathon_Starter_Sample
 {
     public class Player : MonoBehaviour
     {

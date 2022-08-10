@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace NFT_PowerUp
+namespace Cronos_Hackathon_Starter_Sample
 {
 	[RequireComponent(typeof(PlayerInput))]
 	public class PlayerInputController : MonoBehaviour
@@ -33,7 +33,7 @@ namespace NFT_PowerUp
 		#endregion
 		
 
-		#region INPUT_SYSTEM_EVENT_HANDLERS
+		#region PLAYER_INPUT_MESSAGE_HANDLERS
 
 		public void OnMove(InputValue value)
 		{

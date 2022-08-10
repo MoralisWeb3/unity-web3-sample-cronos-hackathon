@@ -6,7 +6,7 @@ namespace Cronos_Hackathon_Starter_Sample
 {
     [RequireComponent(typeof(Animator))]
     [RequireComponent(typeof(CharacterController))]
-    public class PlayerMovement : MonoBehaviour
+    public class PlayerMovementController : MonoBehaviour
     {
         public Action onMaxFallingTimeReached;
         

@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 namespace Cronos_Hackathon_Starter_Sample
 {
+	[RequireComponent(typeof(PlayerInput))]
 	public class PlayerInputController : MonoBehaviour
 	{
 		[Header("Character Input Values")]

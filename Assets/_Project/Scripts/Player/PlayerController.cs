@@ -1,17 +1,28 @@
-using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Cronos_Hackathon_Starter_Sample
 {
     public class PlayerController : MonoBehaviour
     {
-        [Header("Main Custom Components")]
+        [Header("Main Components")]
         public PlayerMovementController movement;
         public PlayerInputController input;
 
-        private void OnEnable()
+        [Header("Other Components")]
+        [SerializeField] private AudioSource audioSource;
+        
+        
+        public void OnDance(InputValue value)
         {
-            input.EnableInput(false);
+            if (value.isPressed)
+            {
+                audioSource.Play();
+            }
+            else
+            {
+                audioSource.Stop();
+            }
         }
     }
 }

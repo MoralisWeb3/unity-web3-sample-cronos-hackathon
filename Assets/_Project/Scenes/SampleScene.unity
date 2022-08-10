@@ -3112,8 +3112,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c2e8e80f5d82864bb3ff3e3c7a63a30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  input: {fileID: 7649323136902185679}
-  movement: {fileID: 7649323136902185649}
 --- !u!95 &7649323136902185677
 Animator:
   serializedVersion: 4
@@ -3167,7 +3165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 40c9eb977513f5f46bfab791d170fdc7, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: cfa05912a2c429c49bc23a5fd462a3fb, type: 3}
   m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:

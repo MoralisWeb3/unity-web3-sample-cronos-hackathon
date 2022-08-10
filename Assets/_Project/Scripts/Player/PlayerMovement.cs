@@ -104,6 +104,7 @@ namespace Cronos_Hackathon_Starter_Sample
         private int _animIDJump;
         private int _animIDFreeFall;
         private int _animIDMotionSpeed;
+        private int _animIDDance;
 
         // Components
         private PlayerInput _playerInput;
@@ -149,46 +150,12 @@ namespace Cronos_Hackathon_Starter_Sample
             JumpAndGravity();
             GroundedCheck();
             Move();
+            Dance();
         }
 
         private void LateUpdate()
         {
             CameraRotation();
-        }
-
-        #endregion
-
-
-        #region PUBLIC_METHODS
-
-        public void Deactivate()
-        {
-            _characterController.enabled = false;
-            enabled = false;
-        }
-
-        public void BoostMovementByPercentage(float percentage)
-        {
-            // Save initial values
-            _initMoveSpeed = moveSpeed;
-            _initSprintSpeed = sprintSpeed;
-            _initJumpHeight = jumpHeight;
-
-            // Boost movement and jump
-            moveSpeed += moveSpeed / 100 * percentage;
-            sprintSpeed += sprintSpeed / 100 * percentage;
-            jumpHeight += jumpHeight / 100 * percentage;
-
-            boosted = true;
-        }
-        
-        public void ReturnMovementToDefault()
-        {
-            moveSpeed = _initMoveSpeed;
-            sprintSpeed = _initSprintSpeed;
-            jumpHeight = _initJumpHeight;
-
-            boosted = false;
         }
 
         #endregion
@@ -366,6 +333,13 @@ namespace Cronos_Hackathon_Starter_Sample
             }
         }
         
+        private void Dance()
+        {
+            if (_speed != 0 || !grounded) return; // We don't want to dance while moving or not being grounded
+            
+            _animator.SetBool(_animIDDance, _inputController.dance);
+        }
+        
         private void AssignAnimationIDs()
         {
             _animIDSpeed = Animator.StringToHash("Speed");
@@ -373,6 +347,7 @@ namespace Cronos_Hackathon_Starter_Sample
             _animIDJump = Animator.StringToHash("Jump");
             _animIDFreeFall = Animator.StringToHash("FreeFall");
             _animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
+            _animIDDance = Animator.StringToHash("Dance");
         }
 
         private static float ClampAngle(float lfAngle, float lfMin, float lfMax)

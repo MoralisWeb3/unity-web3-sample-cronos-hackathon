@@ -11,6 +11,7 @@ namespace Cronos_Hackathon_Starter_Sample
 		public Vector2 look;
 		[HideInInspector] public bool jump;
 		[HideInInspector] public bool sprint;
+		[HideInInspector] public bool dance;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -56,6 +57,11 @@ namespace Cronos_Hackathon_Starter_Sample
 		{
 			SprintInput(value.isPressed);
 		}
+		
+		public void OnDance(InputValue value)
+		{
+			DanceInput(value.isPressed);
+		}
 
 		#endregion
 
@@ -80,6 +86,11 @@ namespace Cronos_Hackathon_Starter_Sample
 		public void SprintInput(bool newSprintState)
 		{
 			sprint = newSprintState;
+		}
+		
+		public void DanceInput(bool newDanceState)
+		{
+			dance = newDanceState;
 		}
 		
 		public void EnableInput(bool status)

@@ -1,18 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.Numerics;
+using MoralisUnity;
+using MoralisUnity.Web3Api.Models;
+using Nethereum.Util;
+using TMPro;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+namespace Cronos_Hackathon_Starter_Sample
 {
-    // Start is called before the first frame update
-    void Start()
+    public class GameManager : MonoBehaviour
     {
-        
-    }
+        [Header("Main Components")]
+        public PlayerController player;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+        [Header("UI")]
+        public TextMeshProUGUI balanceLabel;
+    
+        public async void StartGame()
+        {
+            player.input.EnableInput(true);
+            player.walletAddress.Activate();
+
+            // Get native balance
+            NativeBalance nativeBalance = await Web3Tools.GetNativeBalance();
+            
+            // Convert it to number
+            var integerBalance = BigInteger.Parse(nativeBalance.Balance);
+            
+            // Convert wei to native
+            var formattedBalance = UnitConversion.Convert.FromWei(integerBalance);
+
+            balanceLabel.text = formattedBalance.ToString();
+        }
+    }   
 }

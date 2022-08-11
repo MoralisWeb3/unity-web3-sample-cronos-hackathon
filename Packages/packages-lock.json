@@ -80,7 +80,7 @@
     },
     "com.unity.nuget.newtonsoft-json": {
       "version": "3.0.2",
-      "depth": 2,
+      "depth": 1,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
@@ -170,6 +170,15 @@
         "com.unity.modules.jsonserialize": "1.0.0"
       },
       "url": "https://packages.unity.com"
+    },
+    "io.moralis.web3-unity-sdk": {
+      "version": "https://github.com/MoralisWeb3/web3-unity-sdk.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.nuget.newtonsoft-json": "3.0.2"
+      },
+      "hash": "ecf97552eb783d72ab56b2305507ed78c8de82f6"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",

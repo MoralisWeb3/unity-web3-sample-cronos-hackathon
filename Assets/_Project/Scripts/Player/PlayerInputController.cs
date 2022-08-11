@@ -28,7 +28,7 @@ namespace Cronos_Hackathon_Starter_Sample
 		private void Awake()
 		{
 			playerInput = GetComponent<PlayerInput>();
-			//EnableInput(false);
+			EnableInput(false);
 		}
 
 		#endregion

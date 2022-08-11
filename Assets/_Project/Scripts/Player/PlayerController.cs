@@ -8,6 +8,7 @@ namespace Cronos_Hackathon_Starter_Sample
         [Header("Main Components")]
         public PlayerMovementController movement;
         public PlayerInputController input;
+        public PlayerWalletAddress walletAddress;
 
         [Header("Other Components")]
         [SerializeField] private AudioSource audioSource;
